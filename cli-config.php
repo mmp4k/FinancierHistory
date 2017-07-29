@@ -21,7 +21,7 @@ if (isset($_SERVER['CLEARDB_DATABASE_URL'])) {
         'user'     => $paths['user'],
         'password' => $paths['pass'],
         'host' => $paths['host'],
-        'dbname'   => time($paths['path'], '/'),
+        'dbname'   => trim($paths['path'], '/'),
     ];
 } else {
     $dbParams = array(
