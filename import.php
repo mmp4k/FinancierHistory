@@ -12,12 +12,24 @@ $paths = array("src/App/Entity");
 $isDevMode = true;
 
 // the connection configuration
-$dbParams = array(
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'foo',
-);
+if (isset($_SERVER['CLEARDB_DATABASE_URL'])) {
+    $paths = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+    $dbParams = [
+        'driver'   => 'pdo_mysql',
+        'user'     => $paths['user'],
+        'password' => $paths['pass'],
+        'host' => $paths['host'],
+        'dbname'   => $paths['path'],
+    ];
+} else {
+    $dbParams = array(
+        'driver'   => 'pdo_mysql',
+        'user'     => 'root',
+        'password' => '',
+        'dbname'   => 'foo',
+    );
+}
+
 
 $config = Setup::createYAMLMetadataConfiguration($paths, $isDevMode);
 $entityManager = EntityManager::create($dbParams, $config);
