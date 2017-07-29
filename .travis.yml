@@ -1,0 +1,12 @@
+language: php
+php:
+  - '7.1'
+  - nightly
+install:
+  - composer install --dev
+script:
+  - ./vendor/bin/phpspec run
+deploy:
+  provider: heroku
+  api_key:
+    secure: mrN9n69ONtxj/wLSMYaSFI80fU1eKUjCtmK5QJCV00lKFqAHxrDKQDXW7Q4Kn4z58WmqRJ3sRYYjJ9hMfqMDdGhqBKUpuifi0Tgim6ljRfBQzXamRPOTgvNV7Ne07i6HIcmEoTZhp2o7XSWGgD3vCoM1xk9RUA+EbGsUUMdNXt/G89hVlt5r0S4tI4N6nKDaA6ZZCCSXdoB0QzxqBaX3H4KAvnbpbuJwpnAJa2+GBzyakmxQ2c3X6nU3uEms0fN5HccdryBNxIYRM0bkj2aqq5NVSMKeK/AvIGgvQZGHVblO3+CsY41WDTeTMyRu/XcK3RaUBaBoIw7kfhDAmi0WF8on1HRUVRMMLPKIAYRX+WdyXTOoTz/nsFVsAV/1cPHbMEJUmNFanp1jUyVYF362+jdl0JmKvj3VyadJyTjKDRdvwXHgEPUoYIMM5QKK3YJDJMBrjTVN1B2C9ktVLjZh1cgg8QqOXbqD5GoRor36dYTJTNE9n0zBPAYyOmfHMlZlXTx/aXxSqi4WiudzNGy6qEghT2fb8/c5s3ZQmZfyCLP9r7Zc3R3GumGNVVhfmGlaK7zvpyPrXeUvgiWqSdCYNtrtKCdetyR0w1Lw+eRXpVwv4Z5yes5WLYSZKlfHimyl3QedOCoYWYpT2Utzni8zcAlgRT6XO8W5saWrSvUn/AY=

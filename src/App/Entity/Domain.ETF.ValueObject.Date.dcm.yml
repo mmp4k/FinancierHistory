@@ -1,0 +1,6 @@
+Domain\ETF\ValueObject\Date:
+  type: embeddable
+  fields:
+    date:
+      type: date
+      nullable: false

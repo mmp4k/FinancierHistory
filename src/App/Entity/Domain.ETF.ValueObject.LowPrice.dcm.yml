@@ -1,0 +1,8 @@
+Domain\ETF\ValueObject\LowPrice:
+  type: embeddable
+  fields:
+    value:
+      type: integer
+      length: 11
+      unique: false
+      nullable: false

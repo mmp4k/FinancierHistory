@@ -1,0 +1,21 @@
+Domain\ETF\Model\HistoryData:
+  type: entity
+  table: etf_history_data
+  id:
+    uuid:
+      type: uuid_binary_ordered_time
+      generator: { strategy: NONE }
+  fields: ~
+  embedded:
+    asset:
+      class: Domain\ETF\ValueObject\Asset
+    date:
+      class: Domain\ETF\ValueObject\Date
+    openPrice:
+      class: Domain\ETF\ValueObject\OpenPrice
+    closePrice:
+      class: Domain\ETF\ValueObject\ClosePrice
+    highPrice:
+      class: Domain\ETF\ValueObject\HighPrice
+    lowPrice:
+      class: Domain\ETF\ValueObject\LowPrice
