@@ -1,13 +1,15 @@
 language: php
 php:
-  - '7.1'
-  - nightly
+- '7.1'
+- nightly
 install:
-  - composer install --dev
+- composer install --dev
 script:
-  - ./vendor/bin/phpspec run
+- "./vendor/bin/phpspec run"
 deploy:
   provider: heroku
-  app: financier-history
   api_key:
-    secure: mrN9n69ONtxj/wLSMYaSFI80fU1eKUjCtmK5QJCV00lKFqAHxrDKQDXW7Q4Kn4z58WmqRJ3sRYYjJ9hMfqMDdGhqBKUpuifi0Tgim6ljRfBQzXamRPOTgvNV7Ne07i6HIcmEoTZhp2o7XSWGgD3vCoM1xk9RUA+EbGsUUMdNXt/G89hVlt5r0S4tI4N6nKDaA6ZZCCSXdoB0QzxqBaX3H4KAvnbpbuJwpnAJa2+GBzyakmxQ2c3X6nU3uEms0fN5HccdryBNxIYRM0bkj2aqq5NVSMKeK/AvIGgvQZGHVblO3+CsY41WDTeTMyRu/XcK3RaUBaBoIw7kfhDAmi0WF8on1HRUVRMMLPKIAYRX+WdyXTOoTz/nsFVsAV/1cPHbMEJUmNFanp1jUyVYF362+jdl0JmKvj3VyadJyTjKDRdvwXHgEPUoYIMM5QKK3YJDJMBrjTVN1B2C9ktVLjZh1cgg8QqOXbqD5GoRor36dYTJTNE9n0zBPAYyOmfHMlZlXTx/aXxSqi4WiudzNGy6qEghT2fb8/c5s3ZQmZfyCLP9r7Zc3R3GumGNVVhfmGlaK7zvpyPrXeUvgiWqSdCYNtrtKCdetyR0w1Lw+eRXpVwv4Z5yes5WLYSZKlfHimyl3QedOCoYWYpT2Utzni8zcAlgRT6XO8W5saWrSvUn/AY=
+    secure: rz1JlUC1GPRafGAZYnC2jRzXYezv0tbTzesHYXQylt/j5xEhCpNU4MMn5gF+/ekmyeriR93r/mJZYW8vz8Y5adcyi2xcokSauuT8cooJZxfbqVLAR0Sf4myb7B0++Lzq9yL7gA00jL7U284McOlGJETurMOqXcYkdPCluvpNQJisbnxrH/et5tDteCCMsAHn856l/JG/cECwa6nbTfZ65PH/w2c6c5FBDbu9veTuBIYXJvGDmr5HPCDk32GSPzUSiVPqzA1F2HjvA4ISTc1eBoHF5UHSS/cJPGSUondioqciN7MdUT4JTXavUjCFIiCN/RCb7vd7lb0uQzRhnmU0HtBpbvmb6rv9Bm3GYN6giXZQtVaMAHSQcTsgDnO6JWsl3p5/inbmVqGfAPZWiluE2O9Hzawa/Z9wYNMETyWTNfd5L2sxbmtkzXRNFep7XseMgyFAvAuPE1GoWIcfZLN9wkVqHM5BXhQRnFFs/eq1vBnKboDnhYysNOloXeCbdraWCcUKBhdYVrI5J+Jo+YDPtG24eF06f/ZdSO+zbMiFe3K3PTTOwx0Cl3nUqmtmVf7v8NrkUTBrc7HjxEDhA6jMju/nybHiQoGw4xYeiEIALMyaOb5J9tyjxNrHmm2LP7yWYCMuM++O+CRzs7ntX0Hqy9EgDub8+Qbh7spV62fdTQQ=
+  app: financier-history
+  on:
+    repo: mmp4k/FinancierHistory
