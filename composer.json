@@ -9,7 +9,9 @@
   "require": {
     "ramsey/uuid": "^3.6",
     "doctrine/orm": "^2.5",
-    "ramsey/uuid-doctrine": "^1.4"
+    "ramsey/uuid-doctrine": "^1.4",
+    "webonyx/graphql-php": "^0.9.13",
+    "symfony/dependency-injection": "^3.3"
   },
   "require-dev": {
     "behat/behat": "^3.3",

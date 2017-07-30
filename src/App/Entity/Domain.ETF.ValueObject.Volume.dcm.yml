@@ -1,0 +1,8 @@
+Domain\ETF\ValueObject\Volume:
+  type: embeddable
+  fields:
+    volume:
+      type: integer
+      length: 11
+      unique: false
+      nullable: false

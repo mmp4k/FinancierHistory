@@ -33,7 +33,8 @@ class Importer
                 (float)$open,
                 (float)$close,
                 (float)$high,
-                (float)$low));
+                (float)$low,
+                (int)$volume));
         }
 
     }

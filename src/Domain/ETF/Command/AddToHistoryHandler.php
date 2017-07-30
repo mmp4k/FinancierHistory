@@ -12,6 +12,7 @@ use Domain\ETF\ValueObject\Date;
 use Domain\ETF\ValueObject\HighPrice;
 use Domain\ETF\ValueObject\LowPrice;
 use Domain\ETF\ValueObject\OpenPrice;
+use Domain\ETF\ValueObject\Volume;
 
 class AddToHistoryHandler
 {
@@ -33,7 +34,8 @@ class AddToHistoryHandler
             new OpenPrice((int)($command->openPrice() * 100)),
             new ClosePrice((int)($command->closePrice() * 100)),
             new HighPrice((int)($command->highPrice() * 100)),
-            new LowPrice((int)($command->lowPrice() * 100))
+            new LowPrice((int)($command->lowPrice() * 100)),
+            new Volume((int)$command->volume())
         );
         $this->history->add($data);
     }

@@ -19,3 +19,5 @@ Domain\ETF\Model\HistoryData:
       class: Domain\ETF\ValueObject\HighPrice
     lowPrice:
       class: Domain\ETF\ValueObject\LowPrice
+    volume:
+      class: Domain\ETF\ValueObject\Volume

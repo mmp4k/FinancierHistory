@@ -32,8 +32,12 @@ class AddToHistory implements Command
      * @var float
      */
     private $lowPrice;
+    /**
+     * @var int
+     */
+    private $volume;
 
-    public function __construct(string $code, string $date, float $openPrice, float $closePrice, float $highPrice, float $lowPrice)
+    public function __construct(string $code, string $date, float $openPrice, float $closePrice, float $highPrice, float $lowPrice, int $volume)
     {
         $this->code = $code;
         $this->date = $date;
@@ -41,6 +45,7 @@ class AddToHistory implements Command
         $this->closePrice = $closePrice;
         $this->highPrice = $highPrice;
         $this->lowPrice = $lowPrice;
+        $this->volume = $volume;
     }
 
     public function code(): string
@@ -71,5 +76,10 @@ class AddToHistory implements Command
     public function date(): string
     {
         return $this->date;
+    }
+
+    public function volume(): int
+    {
+        return $this->volume;
     }
 }

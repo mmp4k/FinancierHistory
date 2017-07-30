@@ -1,0 +1,24 @@
+schema {
+    query: Query
+#    mutation: Mutation
+}
+
+type Query {
+    last(asset: String!): AssetData!
+    all(from: String!, to: String!, asset: String): [AssetData]
+    hello: String
+}
+
+type Mutation {
+
+}
+
+type AssetData {
+    asset: String!
+    date: String!
+    highPrice: Int!
+    lowPrice: Int!
+    openPrice: Int!
+    closePrice: Int!
+    volume: Int!
+}

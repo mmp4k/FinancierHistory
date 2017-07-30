@@ -10,6 +10,7 @@ use Domain\ETF\ValueObject\Date;
 use Domain\ETF\ValueObject\HighPrice;
 use Domain\ETF\ValueObject\LowPrice;
 use Domain\ETF\ValueObject\OpenPrice;
+use Domain\ETF\ValueObject\Volume;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -43,8 +44,12 @@ class HistoryData
      * @var UuidInterface
      */
     private $uuid;
+    /**
+     * @var Volume
+     */
+    private $volume;
 
-    public function __construct(Date $date, Asset $asset, OpenPrice $openPrice, ClosePrice $closePrice, HighPrice $highPrice, LowPrice $lowPrice)
+    public function __construct(Date $date, Asset $asset, OpenPrice $openPrice, ClosePrice $closePrice, HighPrice $highPrice, LowPrice $lowPrice, Volume $volume)
     {
         $this->uuid = Uuid::uuid4();
         $this->date = $date;
@@ -53,6 +58,7 @@ class HistoryData
         $this->closePrice = $closePrice;
         $this->highPrice = $highPrice;
         $this->lowPrice = $lowPrice;
+        $this->volume = $volume;
     }
 
     public function uuid(): UuidInterface
@@ -88,5 +94,10 @@ class HistoryData
     public function asset(): Asset
     {
         return $this->asset;
+    }
+
+    public function volume(): Volume
+    {
+        return $this->volume;
     }
 }
