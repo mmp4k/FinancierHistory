@@ -6,10 +6,3 @@ install:
 - composer install --dev
 script:
 - "./vendor/bin/phpspec run"
-deploy:
-  provider: heroku
-  api_key:
-    secure: aUfCtYuHPaEoEFkFlFHSCUOijxTVw5MeiC/IbT6ytkcfVKIgsRrUliMJgb6NsgVhsB2s0cwMp7rF2sbT0NdaQ67z7388m6wOmOxhts5UkUMzXozo3Hi1C2ao12hL2t120NKjHJqo02l3szcOzRuRFdnTWRnmbXaYzS7e43W8fcjNwArOSTQFKzy3fvcguujhV+VjPiM+LlV3v+MAmWEkgKJx5XqxrdNaaNtL5nAVRmV9aDUjSip+AmecATvCL8KYkYTfqgzPSZVI6U2v2XQrRT0qSag1+ADxvb5Qkk7kQP4+70Yga2vGCm5b7L3+eywvid8tmf4FB382HzutON8bMe1Hu2y5mZfg5+2P2NWd6o2zYP1B9eDeJUA+/haKhrQJaKxCm1zjOWjJoMr/O60fcxvZzpJf/QaEsPB/upZeTmnQVzQm9UvLJSwWyP3cD/96Ll5yJXA/Dc4/0iZCVtQdDTkP+sMhYCT7JObIuGzadGtOLyn4xmBuaVvit25Qpn1bIzSJcoqMkblpLZbcDXbOLAAy00V+49kFdU8kmEjg+8gysuoZNU4LgyLPs+VoUyPmKf1MU5ak2gj60Zhv7FMHHqqyMqkQfGUt1FxkVjB3QUdo+V6VR0OR8s8wATTo9jeA1eaTsWevniqYlr001oPrw6LqLZuIAErual2LlD0szBo=
-  app: financier-history
-  on:
-    repo: mmp4k/FinancierHistory

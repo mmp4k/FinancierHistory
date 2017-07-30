@@ -12,23 +12,12 @@ $paths = array("src/App/Entity");
 $isDevMode = true;
 
 // the connection configuration
-if (isset($_SERVER['CLEARDB_DATABASE_URL'])) {
-    $paths = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-    $dbParams = [
-        'driver'   => 'pdo_mysql',
-        'user'     => $paths['user'],
-        'password' => $paths['pass'],
-        'host' => $paths['host'],
-        'dbname'   => trim($paths['path'], '/'),
-    ];
-} else {
-    $dbParams = array(
-        'driver'   => 'pdo_mysql',
-        'user'     => 'root',
-        'password' => '',
-        'dbname'   => 'foo',
-    );
-}
+$dbParams = array(
+    'driver' => 'pdo_mysql',
+    'user' => 'root',
+    'password' => '',
+    'dbname' => 'foo',
+);
 
 
 $config = Setup::createYAMLMetadataConfiguration($paths, $isDevMode);
@@ -42,6 +31,6 @@ $addToHistoryHandler = new \Domain\ETF\Command\AddToHistoryHandler($history);
 $commandBus->registerHandler(\Domain\ETF\Command\AddToHistory::class, $addToHistoryHandler);
 $importer = new \Domain\ETF\Importer($commandBus);
 
-foreach(\Domain\ETF\AvailableETFs::list() as $code) {
-    $importer->import($code, file('/Users/marcin/Downloads/data/daily/pl/wse etfs/'.strtolower($code).'.pl.txt'));
+foreach (\Domain\ETF\AvailableETFs::list() as $code) {
+    $importer->import($code, file('/Users/marcin/Downloads/data/daily/pl/wse etfs/' . strtolower($code) . '.pl.txt'));
 }
